@@ -348,7 +348,6 @@ var script$3 = {
     valueBy: {
       type: [String, Function],
     },
-
     disabled: {
       default: false,
       type: Boolean,
@@ -688,6 +687,7 @@ function render$3(_ctx, _cache, $props, $setup, $data, $options) {
       (($props.multiple && $props.taggable && $props.modelValue.length === 0) || ($props.searchable === false && $props.taggable === false))
         ? (vue.openBlock(), vue.createBlock("div", _hoisted_2, [
             vue.createVNode("input", {
+              name: "{name}",
               placeholder: $setup.innerPlaceholder,
               readonly: "",
               onClick: _cache[1] || (_cache[1] = (...args) => ($setup.focus && $setup.focus(...args)))

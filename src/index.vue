@@ -17,7 +17,7 @@
         v-if="(multiple && taggable && modelValue.length === 0) || (searchable === false && taggable === false)"
       >
         <div class="vue-input">
-          <input :placeholder="innerPlaceholder" readonly @click="focus" />
+          <input name="{name}" :placeholder="innerPlaceholder" readonly @click="focus" />
         </div>
       </template>
 
@@ -176,7 +176,6 @@ export default {
     valueBy: {
       type: [String, Function],
     },
-
     disabled: {
       default: false,
       type: Boolean,
