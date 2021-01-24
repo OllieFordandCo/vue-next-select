@@ -73,7 +73,9 @@
           :class="{ active: isFocusing }"
           @click="toggle"
           @mousedown.prevent.stop
-        ></span>
+        >
+              <slot name="icon"></slot>
+        </span>
       </template>
     </div>
 

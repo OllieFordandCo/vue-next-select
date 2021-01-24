@@ -754,7 +754,9 @@ function render$3(_ctx, _cache, $props, $setup, $data, $options) {
               class: ["icon arrow-downward", { active: $setup.isFocusing }],
               onClick: _cache[5] || (_cache[5] = (...args) => ($setup.toggle && $setup.toggle(...args))),
               onMousedown: _cache[6] || (_cache[6] = vue.withModifiers(() => {}, ["prevent","stop"]))
-            }, null, 34 /* CLASS, HYDRATE_EVENTS */), [
+            }, [
+              vue.renderSlot(_ctx.$slots, "icon")
+            ], 34 /* CLASS, HYDRATE_EVENTS */), [
               [vue.vShow, $props.loading === false]
             ])
           ], 64 /* STABLE_FRAGMENT */))
