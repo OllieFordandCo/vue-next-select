@@ -16,17 +16,20 @@
 }
 
 .icon.arrow-downward {
-  color: #999;
-  border-style: solid;
-  border-width: 4px 4px 0;
-  border-color: #999 transparent transparent;
-  content: '';
+  color: inherit;
   transition: transform 0.2s linear;
   cursor: pointer;
+  width: 1.3em;
 }
 
 .icon.arrow-downward.active {
   transform: rotate(180deg);
+}
+
+.icon-arrow-downward svg, .icon-arrow-downward img {
+  max-width: 100%;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .vue-select {
@@ -64,7 +67,7 @@
 
 .vue-select-header > .icon.loading,
 .vue-select-header > .icon.arrow-downward {
-  margin-right: 4px;
+  /*margin-right: 4px;*/
 }
 
 .vue-tags {
