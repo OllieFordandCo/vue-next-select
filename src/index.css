@@ -167,7 +167,7 @@
 
 .vue-dropdown-item {
   list-style-type: none;
-  padding: size_by_factor(0.5) $size__spacing-unit;
+  padding: 1rem;
   cursor: pointer;
 }
 
@@ -176,18 +176,6 @@
   border-bottom-right-radius: 4px;
 }
 
-.vue-dropdown-item:hover {
-  background-color: get-colour(primary-blue);
-}
-
-.vue-dropdown-item.selected {
-  color: get-colour(primary-blue);
-  background-color: get-colour(pastel-blue);
-}
-
-.vue-dropdown-item.selected:hover {
-  background-color: get-colour(primary-blue);
-}
 
 .icon.loading {
   display: inline-block;
