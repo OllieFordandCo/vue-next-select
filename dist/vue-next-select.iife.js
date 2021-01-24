@@ -686,7 +686,7 @@ this.VueNextSelect = (function (vue) {
         (($props.multiple && $props.taggable && $props.modelValue.length === 0) || ($props.searchable === false && $props.taggable === false))
           ? (vue.openBlock(), vue.createBlock("div", _hoisted_2, [
               vue.createVNode("input", {
-                name: "{name}",
+                name: "{inputName}",
                 placeholder: $setup.innerPlaceholder,
                 readonly: "",
                 onClick: _cache[1] || (_cache[1] = (...args) => ($setup.focus && $setup.focus(...args)))
