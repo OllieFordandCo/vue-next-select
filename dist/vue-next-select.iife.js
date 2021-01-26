@@ -318,6 +318,10 @@ this.VueNextSelect = (function (vue) {
         default: false,
         type: Boolean,
       },
+      name: {
+        default: 0,
+        type: String,
+      },
       min: {
         default: 0,
         type: Number,
@@ -367,7 +371,6 @@ this.VueNextSelect = (function (vue) {
         default: false,
         type: Boolean,
       },
-
       taggable: {
         default: false,
         type: Boolean,
@@ -686,11 +689,12 @@ this.VueNextSelect = (function (vue) {
         (($props.multiple && $props.taggable && $props.modelValue.length === 0) || ($props.searchable === false && $props.taggable === false))
           ? (vue.openBlock(), vue.createBlock("div", _hoisted_2, [
               vue.createVNode("input", {
-                "model-value": {innerPlaceholder: $setup.innerPlaceholder},
+                name: {name: $props.name},
+                value: {innerPlaceholder: $setup.innerPlaceholder},
                 placeholder: $setup.innerPlaceholder,
                 readonly: "",
                 onClick: _cache[1] || (_cache[1] = (...args) => ($setup.focus && $setup.focus(...args)))
-              }, null, 8 /* PROPS */, ["model-value", "placeholder"])
+              }, null, 8 /* PROPS */, ["name", "value", "placeholder"])
             ]))
           : vue.createCommentVNode("v-if", true),
         ($props.multiple && $props.taggable)
