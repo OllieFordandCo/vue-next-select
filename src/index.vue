@@ -147,8 +147,8 @@ export default {
       default: false,
       type: Boolean,
     },
-    name: {
-      default: 0,
+    inputName: {
+      default: '',
       type: String,
     },
     min: {

@@ -318,8 +318,8 @@ this.VueNextSelect = (function (vue) {
         default: false,
         type: Boolean,
       },
-      name: {
-        default: 0,
+      inputName: {
+        default: '',
         type: String,
       },
       min: {
@@ -689,7 +689,7 @@ this.VueNextSelect = (function (vue) {
         (($props.multiple && $props.taggable && $props.modelValue.length === 0) || ($props.searchable === false && $props.taggable === false))
           ? (vue.openBlock(), vue.createBlock("div", _hoisted_2, [
               vue.createVNode("input", {
-                name: {name: $props.name},
+                name: {name: _ctx.name},
                 value: {innerPlaceholder: $setup.innerPlaceholder},
                 placeholder: $setup.innerPlaceholder,
                 readonly: "",
