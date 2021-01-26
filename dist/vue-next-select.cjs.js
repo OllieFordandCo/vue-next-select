@@ -690,7 +690,7 @@ function render$3(_ctx, _cache, $props, $setup, $data, $options) {
       (($props.multiple && $props.taggable && $props.modelValue.length === 0) || ($props.searchable === false && $props.taggable === false))
         ? (vue.openBlock(), vue.createBlock("div", _hoisted_2, [
             vue.createVNode("input", {
-              name: {name: _ctx.name},
+              name: {inputName: $props.inputName},
               value: {innerPlaceholder: $setup.innerPlaceholder},
               placeholder: $setup.innerPlaceholder,
               readonly: "",
