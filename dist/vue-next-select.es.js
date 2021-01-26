@@ -317,9 +317,8 @@ var script$3 = {
       default: false,
       type: Boolean,
     },
-    inputName: {
-      default: '',
-      type: String,
+    inputLabel: {
+      type: [String, Function],
     },
     min: {
       default: 0,
@@ -688,7 +687,7 @@ function render$3(_ctx, _cache, $props, $setup, $data, $options) {
       (($props.multiple && $props.taggable && $props.modelValue.length === 0) || ($props.searchable === false && $props.taggable === false))
         ? (openBlock(), createBlock("div", _hoisted_2, [
             createVNode("input", {
-              name: {inputName: $props.inputName},
+              name: {inputLabel: $props.inputLabel},
               value: {innerPlaceholder: $setup.innerPlaceholder},
               placeholder: $setup.innerPlaceholder,
               readonly: "",
