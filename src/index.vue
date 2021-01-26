@@ -346,7 +346,7 @@ export default {
       if (props.multiple) {
         context.emit('update:modelValue', props.inputName, selectedValues)
       } else {
-        if (selectedValues.length) context.emit('update:modelValue', selectedValues[0])
+        if (selectedValues.length) context.emit('update:modelValue', props.inputName, selectedValues[0])
         else context.emit('update:modelValue', props.inputName, null)
       }
     }
