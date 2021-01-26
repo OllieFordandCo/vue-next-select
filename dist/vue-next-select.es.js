@@ -317,9 +317,6 @@ var script$3 = {
       default: false,
       type: Boolean,
     },
-    inputLabel: {
-      type: [String, Function],
-    },
     min: {
       default: 0,
       type: Number,
@@ -369,6 +366,7 @@ var script$3 = {
       default: false,
       type: Boolean,
     },
+
     taggable: {
       default: false,
       type: Boolean,
@@ -687,12 +685,11 @@ function render$3(_ctx, _cache, $props, $setup, $data, $options) {
       (($props.multiple && $props.taggable && $props.modelValue.length === 0) || ($props.searchable === false && $props.taggable === false))
         ? (openBlock(), createBlock("div", _hoisted_2, [
             createVNode("input", {
-              name: {inputLabel: $props.inputLabel},
               value: {innerPlaceholder: $setup.innerPlaceholder},
               placeholder: $setup.innerPlaceholder,
               readonly: "",
               onClick: _cache[1] || (_cache[1] = (...args) => ($setup.focus && $setup.focus(...args)))
-            }, null, 8 /* PROPS */, ["name", "value", "placeholder"])
+            }, null, 8 /* PROPS */, ["value", "placeholder"])
           ]))
         : createCommentVNode("v-if", true),
       ($props.multiple && $props.taggable)

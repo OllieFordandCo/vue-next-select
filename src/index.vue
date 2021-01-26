@@ -17,7 +17,7 @@
         v-if="(multiple && taggable && modelValue.length === 0) || (searchable === false && taggable === false)"
       >
         <div class="vue-input">
-          <input :name="{inputLabel}" :value="{innerPlaceholder}" :placeholder="innerPlaceholder" readonly @click="focus" />
+          <input :value="{innerPlaceholder}" :placeholder="innerPlaceholder" readonly @click="focus" />
         </div>
       </template>
 
@@ -147,9 +147,6 @@ export default {
       default: false,
       type: Boolean,
     },
-    inputLabel: {
-      type: [String, Function],
-    },
     min: {
       default: 0,
       type: Number,
@@ -199,6 +196,7 @@ export default {
       default: false,
       type: Boolean,
     },
+
     taggable: {
       default: false,
       type: Boolean,
