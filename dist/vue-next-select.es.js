@@ -8,6 +8,10 @@ var script = {
       required: true,
       type: String,
     },
+    inputName: {
+      default: '',
+      type: String
+    },
     placeholder: {
       required: true,
       type: String,
@@ -81,9 +85,10 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       onFocus: _cache[3] || (_cache[3] = (...args) => ($setup.handleFocus && $setup.handleFocus(...args))),
       onBlur: _cache[4] || (_cache[4] = (...args) => ($setup.handleBlur && $setup.handleBlur(...args))),
       onKeyup: _cache[5] || (_cache[5] = withKeys(withModifiers((...args) => ($setup.handleEscape && $setup.handleEscape(...args)), ["exact"]), ["esc"])),
+      name: $props.inputName,
       tabindex: $props.tabindex,
       autofocus: $props.autofocus
-    }, null, 40 /* PROPS, HYDRATE_EVENTS */, ["modelValue", "placeholder", "disabled", "tabindex", "autofocus"]),
+    }, null, 40 /* PROPS, HYDRATE_EVENTS */, ["modelValue", "placeholder", "disabled", "name", "tabindex", "autofocus"]),
     renderSlot(_ctx.$slots, "append")
   ]))
 }

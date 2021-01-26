@@ -11,6 +11,7 @@
       @focus="handleFocus"
       @blur="handleBlur"
       @keyup.esc.exact="handleEscape"
+      :name="inputName"
       :tabindex="tabindex"
       :autofocus="autofocus"
     />
@@ -28,6 +29,10 @@ export default {
     modelValue: {
       required: true,
       type: String,
+    },
+    inputName: {
+      default: '',
+      type: String
     },
     placeholder: {
       required: true,
@@ -50,11 +55,11 @@ export default {
   setup(props, context) {
     const handleInput = event => {
       context.emit('input', event)
-      context.emit('update:modelValue', event.target.value)
+      context.emit('update:modelValue', props.inputName, event.target.value)
     }
     const handleChange = event => {
       context.emit('change', event)
-      context.emit('update:modelValue', event.target.value)
+      context.emit('update:modelValue', props.inputName, event.target.value)
     }
     const handleFocus = event => {
       context.emit('focus', event)
