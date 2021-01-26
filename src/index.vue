@@ -17,7 +17,7 @@
         v-if="(multiple && taggable && modelValue.length === 0) || (searchable === false && taggable === false)"
       >
         <div class="vue-input">
-          <input :value="{innerPlaceholder}" :placeholder="innerPlaceholder" readonly @click="focus" />
+          <input :model-value="{innerPlaceholder}" :placeholder="innerPlaceholder" readonly @click="focus" />
         </div>
       </template>
 

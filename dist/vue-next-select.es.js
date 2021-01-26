@@ -685,11 +685,11 @@ function render$3(_ctx, _cache, $props, $setup, $data, $options) {
       (($props.multiple && $props.taggable && $props.modelValue.length === 0) || ($props.searchable === false && $props.taggable === false))
         ? (openBlock(), createBlock("div", _hoisted_2, [
             createVNode("input", {
-              value: {innerPlaceholder: $setup.innerPlaceholder},
+              "model-value": {innerPlaceholder: $setup.innerPlaceholder},
               placeholder: $setup.innerPlaceholder,
               readonly: "",
               onClick: _cache[1] || (_cache[1] = (...args) => ($setup.focus && $setup.focus(...args)))
-            }, null, 8 /* PROPS */, ["value", "placeholder"])
+            }, null, 8 /* PROPS */, ["model-value", "placeholder"])
           ]))
         : createCommentVNode("v-if", true),
       ($props.multiple && $props.taggable)
