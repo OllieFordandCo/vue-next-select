@@ -516,10 +516,10 @@ var script$3 = {
       if (isSynchronoused()) return
       const selectedValues = innerModelValue.value.map(option => valueBy.value(option));
       if (props.multiple) {
-        context.emit('update:modelValue', selectedValues);
+        context.emit('update:modelValue', props.inputName, selectedValues);
       } else {
         if (selectedValues.length) context.emit('update:modelValue', selectedValues[0]);
-        else context.emit('update:modelValue', null);
+        else context.emit('update:modelValue', props.inputName, null);
       }
     };
     vue.watch(
@@ -546,7 +546,7 @@ var script$3 = {
       option = option.originalOption;
       if (hasOption(innerModelValue.value, option, { valueBy: valueBy.value })) {
         innerModelValue.value = removeOption(innerModelValue.value, option, { min: min.value, valueBy: valueBy.value });
-        context.emit('removed', option);
+        context.emit('removed', props.inputName, option);
       } else {
         if (!props.multiple) {
           const removingOption = innerModelValue.value[0];
@@ -554,10 +554,10 @@ var script$3 = {
             min: 0,
             valueBy: valueBy.value,
           });
-          context.emit('removed', removingOption);
+          context.emit('removed', props.inputName, removingOption);
         }
         innerModelValue.value = addOption(innerModelValue.value, option, { max: max.value, valueBy: valueBy.value });
-        context.emit('selected', option);
+        context.emit('selected', props.inputName, option);
       }
       if (props.closeOnSelect === true) isFocusing.value = false;
       if (props.clearOnSelect === true && searchingInputValue.value) {
