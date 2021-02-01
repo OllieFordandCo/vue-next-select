@@ -43,7 +43,6 @@
         >
            <slot name="icon"></slot>
         </span>
-
       </template>
 
       <template v-else>
