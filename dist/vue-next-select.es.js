@@ -33,11 +33,11 @@ var script = {
   setup(props, context) {
     const handleInput = event => {
       context.emit('input', event);
-      context.emit('update:modelValue', event.target.value);
+      context.emit('update:modelValue', props.inputName, event.target.value);
     };
     const handleChange = event => {
       context.emit('change', event);
-      context.emit('update:modelValue', event.target.value);
+      context.emit('update:modelValue', props.inputName, event.target.value);
     };
     const handleFocus = event => {
       context.emit('focus', event);
@@ -695,10 +695,11 @@ function render$3(_ctx, _cache, $props, $setup, $data, $options) {
         ? (openBlock(), createBlock("div", _hoisted_2, [
             createVNode("input", {
               name: $props.inputName,
+              value: {modelValue: $props.modelValue},
               placeholder: $setup.innerPlaceholder,
               readonly: "",
               onClick: _cache[1] || (_cache[1] = (...args) => ($setup.focus && $setup.focus(...args)))
-            }, null, 8 /* PROPS */, ["name", "placeholder"])
+            }, null, 8 /* PROPS */, ["name", "value", "placeholder"])
           ]))
         : createCommentVNode("v-if", true),
       ($props.multiple && $props.taggable)
