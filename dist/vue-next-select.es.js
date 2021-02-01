@@ -695,7 +695,6 @@ function render$3(_ctx, _cache, $props, $setup, $data, $options) {
         ? (openBlock(), createBlock("div", _hoisted_2, [
             createVNode("input", {
               name: $props.inputName,
-              value: {},
               placeholder: $setup.innerPlaceholder,
               readonly: "",
               onClick: _cache[1] || (_cache[1] = (...args) => ($setup.focus && $setup.focus(...args)))

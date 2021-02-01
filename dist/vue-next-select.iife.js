@@ -696,7 +696,6 @@ this.VueNextSelect = (function (vue) {
           ? (vue.openBlock(), vue.createBlock("div", _hoisted_2, [
               vue.createVNode("input", {
                 name: $props.inputName,
-                value: {},
                 placeholder: $setup.innerPlaceholder,
                 readonly: "",
                 onClick: _cache[1] || (_cache[1] = (...args) => ($setup.focus && $setup.focus(...args)))
