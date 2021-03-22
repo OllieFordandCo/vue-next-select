@@ -57,6 +57,7 @@
           @focus="handleFocusForInput"
           @blur="handleBlurForInput"
           @escape="blur"
+          :name="inputName"
           :autofocus="autofocus || (taggable && searchable)"
           :tabindex="tabindex"
         ></v-input>
@@ -90,6 +91,7 @@
         @focus="handleFocusForInput"
         @blur="handleBlurForInput"
         @escape="blur"
+        :name="inputName"
         :tabindex="tabindex"
         :autofocus="autofocus || (taggable && searchable)"
       >

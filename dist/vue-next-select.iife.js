@@ -747,9 +747,10 @@ this.VueNextSelect = (function (vue) {
                     onFocus: $setup.handleFocusForInput,
                     onBlur: $setup.handleBlurForInput,
                     onEscape: $setup.blur,
+                    name: $props.inputName,
                     autofocus: $props.autofocus || ($props.taggable && $props.searchable),
                     tabindex: $props.tabindex
-                  }, null, 8 /* PROPS */, ["modelValue", "disabled", "placeholder", "onInput", "onChange", "onFocus", "onBlur", "onEscape", "autofocus", "tabindex"]))
+                  }, null, 8 /* PROPS */, ["modelValue", "disabled", "placeholder", "onInput", "onChange", "onFocus", "onBlur", "onEscape", "name", "autofocus", "tabindex"]))
                 : vue.createCommentVNode("v-if", true),
               vue.withDirectives(vue.createVNode("span", _hoisted_3, [
                 _hoisted_4,
@@ -782,6 +783,7 @@ this.VueNextSelect = (function (vue) {
             onFocus: $setup.handleFocusForInput,
             onBlur: $setup.handleBlurForInput,
             onEscape: $setup.blur,
+            name: $props.inputName,
             tabindex: $props.tabindex,
             autofocus: $props.autofocus || ($props.taggable && $props.searchable)
           }, {
@@ -795,7 +797,7 @@ this.VueNextSelect = (function (vue) {
               ])
             ]),
             _: 1 /* STABLE */
-          }, 8 /* PROPS */, ["modelValue", "disabled", "placeholder", "onInput", "onChange", "onFocus", "onBlur", "onEscape", "tabindex", "autofocus"])), [
+          }, 8 /* PROPS */, ["modelValue", "disabled", "placeholder", "onInput", "onChange", "onFocus", "onBlur", "onEscape", "name", "tabindex", "autofocus"])), [
             [vue.vShow, $setup.isFocusing]
           ])
         : vue.createCommentVNode("v-if", true),

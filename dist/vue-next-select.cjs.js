@@ -748,9 +748,10 @@ function render$3(_ctx, _cache, $props, $setup, $data, $options) {
                   onFocus: $setup.handleFocusForInput,
                   onBlur: $setup.handleBlurForInput,
                   onEscape: $setup.blur,
+                  name: $props.inputName,
                   autofocus: $props.autofocus || ($props.taggable && $props.searchable),
                   tabindex: $props.tabindex
-                }, null, 8 /* PROPS */, ["modelValue", "disabled", "placeholder", "onInput", "onChange", "onFocus", "onBlur", "onEscape", "autofocus", "tabindex"]))
+                }, null, 8 /* PROPS */, ["modelValue", "disabled", "placeholder", "onInput", "onChange", "onFocus", "onBlur", "onEscape", "name", "autofocus", "tabindex"]))
               : vue.createCommentVNode("v-if", true),
             vue.withDirectives(vue.createVNode("span", _hoisted_3, [
               _hoisted_4,
@@ -783,6 +784,7 @@ function render$3(_ctx, _cache, $props, $setup, $data, $options) {
           onFocus: $setup.handleFocusForInput,
           onBlur: $setup.handleBlurForInput,
           onEscape: $setup.blur,
+          name: $props.inputName,
           tabindex: $props.tabindex,
           autofocus: $props.autofocus || ($props.taggable && $props.searchable)
         }, {
@@ -796,7 +798,7 @@ function render$3(_ctx, _cache, $props, $setup, $data, $options) {
             ])
           ]),
           _: 1 /* STABLE */
-        }, 8 /* PROPS */, ["modelValue", "disabled", "placeholder", "onInput", "onChange", "onFocus", "onBlur", "onEscape", "tabindex", "autofocus"])), [
+        }, 8 /* PROPS */, ["modelValue", "disabled", "placeholder", "onInput", "onChange", "onFocus", "onBlur", "onEscape", "name", "tabindex", "autofocus"])), [
           [vue.vShow, $setup.isFocusing]
         ])
       : vue.createCommentVNode("v-if", true),
