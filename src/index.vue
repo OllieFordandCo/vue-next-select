@@ -17,7 +17,7 @@
         v-if="(multiple && taggable && modelValue.length === 0) || (searchable === false && taggable === false)"
       >
         <div class="vue-input">
-          <input :name="inputName" :placeholder="innerPlaceholder" readonly @click="focus" />
+          <input :name="inputName" class="hidden-input" :placeholder="innerPlaceholder" readonly @click="focus" />
         </div>
       </template>
 
@@ -231,7 +231,7 @@ export default {
     'search:blur',
   ],
   setup(props, context) {
-    const { trackBy, labelBy, valueBy, min, max, options } = normalize(props)
+    const { trackBy, labelBy, valueBy, min, max, inputName, options } = normalize(props)
 
     const wrapper = ref(null)
     const input = ref(null)
@@ -287,10 +287,14 @@ export default {
     // input
     const searchingInputValue = ref('')
     const handleInputForInput = event => {
-      context.emit('search:input', event)
+      let {inputName} = props.inputName;
+      event.inputName = inputName;
+      context.emit('search:input', event, inputName)
     }
     const handleChangeForInput = event => {
-      context.emit('search:change', event)
+      let {inputName} = props.inputName;
+      event.inputName = inputName;
+      context.emit('search:change', event, inputName)
     }
     const handleFocusForInput = event => {
       focus()
@@ -469,7 +473,7 @@ export default {
       addOrRemoveOption,
 
       dataAttrs,
-
+      inputName,
       innerPlaceholder,
     }
   },

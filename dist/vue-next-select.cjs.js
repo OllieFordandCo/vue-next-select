@@ -407,7 +407,7 @@ var script$3 = {
     'search:blur',
   ],
   setup(props, context) {
-    const { trackBy, labelBy, valueBy, min, max, options } = normalize(props);
+    const { trackBy, labelBy, valueBy, min, max, inputName, options } = normalize(props);
 
     const wrapper = vue.ref(null);
     const input = vue.ref(null);
@@ -463,10 +463,14 @@ var script$3 = {
     // input
     const searchingInputValue = vue.ref('');
     const handleInputForInput = event => {
-      context.emit('search:input', event);
+      let {inputName} = props.inputName;
+      event.inputName = inputName;
+      context.emit('search:input', event, inputName);
     };
     const handleChangeForInput = event => {
-      context.emit('search:change', event);
+      let {inputName} = props.inputName;
+      event.inputName = inputName;
+      context.emit('search:change', event, inputName);
     };
     const handleFocusForInput = event => {
       focus();
@@ -645,7 +649,7 @@ var script$3 = {
       addOrRemoveOption,
 
       dataAttrs,
-
+      inputName,
       innerPlaceholder,
     }
   },
@@ -696,7 +700,8 @@ function render$3(_ctx, _cache, $props, $setup, $data, $options) {
       (($props.multiple && $props.taggable && $props.modelValue.length === 0) || ($props.searchable === false && $props.taggable === false))
         ? (vue.openBlock(), vue.createBlock("div", _hoisted_2, [
             vue.createVNode("input", {
-              name: $props.inputName,
+              name: $setup.inputName,
+              class: "hidden-input",
               placeholder: $setup.innerPlaceholder,
               readonly: "",
               onClick: _cache[1] || (_cache[1] = (...args) => ($setup.focus && $setup.focus(...args)))
@@ -748,7 +753,7 @@ function render$3(_ctx, _cache, $props, $setup, $data, $options) {
                   onFocus: $setup.handleFocusForInput,
                   onBlur: $setup.handleBlurForInput,
                   onEscape: $setup.blur,
-                  name: $props.inputName,
+                  name: $setup.inputName,
                   autofocus: $props.autofocus || ($props.taggable && $props.searchable),
                   tabindex: $props.tabindex
                 }, null, 8 /* PROPS */, ["modelValue", "disabled", "placeholder", "onInput", "onChange", "onFocus", "onBlur", "onEscape", "name", "autofocus", "tabindex"]))
@@ -784,7 +789,7 @@ function render$3(_ctx, _cache, $props, $setup, $data, $options) {
           onFocus: $setup.handleFocusForInput,
           onBlur: $setup.handleBlurForInput,
           onEscape: $setup.blur,
-          name: $props.inputName,
+          name: $setup.inputName,
           tabindex: $props.tabindex,
           autofocus: $props.autofocus || ($props.taggable && $props.searchable)
         }, {
