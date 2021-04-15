@@ -391,10 +391,6 @@ var script$3 = {
     autofocus: {
       default: false,
       type: Boolean,
-    },
-    customOption: {
-      default: '',
-      type: String
     }
   },
   emits: [
@@ -411,6 +407,7 @@ var script$3 = {
   setup(props, context) {
     const { trackBy, labelBy, valueBy, min, max, inputName, options } = normalize(props);
 
+    const customOption = ref(null);
     const wrapper = ref(null);
     const input = ref(null);
     const isFocusing = ref(false);
@@ -631,6 +628,7 @@ var script$3 = {
 
     return {
       isFocusing,
+      customOption,
       wrapper,
       input,
       focus,

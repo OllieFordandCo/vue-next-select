@@ -217,10 +217,6 @@ export default {
     autofocus: {
       default: false,
       type: Boolean,
-    },
-    customOption: {
-      default: '',
-      type: String
     }
   },
   emits: [
@@ -237,6 +233,7 @@ export default {
   setup(props, context) {
     const { trackBy, labelBy, valueBy, min, max, inputName, options } = normalize(props)
 
+    const customOption = ref(null);
     const wrapper = ref(null)
     const input = ref(null)
     const isFocusing = ref(false)
@@ -457,6 +454,7 @@ export default {
 
     return {
       isFocusing,
+      customOption,
       wrapper,
       input,
       focus,

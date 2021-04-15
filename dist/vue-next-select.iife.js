@@ -392,10 +392,6 @@ this.VueNextSelect = (function (vue) {
       autofocus: {
         default: false,
         type: Boolean,
-      },
-      customOption: {
-        default: '',
-        type: String
       }
     },
     emits: [
@@ -412,6 +408,7 @@ this.VueNextSelect = (function (vue) {
     setup(props, context) {
       const { trackBy, labelBy, valueBy, min, max, inputName, options } = normalize(props);
 
+      const customOption = vue.ref(null);
       const wrapper = vue.ref(null);
       const input = vue.ref(null);
       const isFocusing = vue.ref(false);
@@ -632,6 +629,7 @@ this.VueNextSelect = (function (vue) {
 
       return {
         isFocusing,
+        customOption,
         wrapper,
         input,
         focus,
