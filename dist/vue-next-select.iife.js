@@ -393,6 +393,10 @@ this.VueNextSelect = (function (vue) {
         default: false,
         type: Boolean,
       },
+      customOption: {
+        default: '',
+        type: String
+      }
     },
     emits: [
       'update:modelValue',
