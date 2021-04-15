@@ -465,11 +465,13 @@ var script$3 = {
     const handleInputForInput = event => {
       let {inputName} = props.inputName;
       event.inputName = inputName;
+      console.log(props);
       context.emit('search:input', event, inputName);
     };
     const handleChangeForInput = event => {
       let {inputName} = props.inputName;
       event.inputName = inputName;
+      console.log(props);
       context.emit('search:change', event, inputName);
     };
     const handleFocusForInput = event => {
