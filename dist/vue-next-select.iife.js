@@ -629,7 +629,6 @@ this.VueNextSelect = (function (vue) {
 
       return {
         isFocusing,
-        customOption,
         wrapper,
         input,
         focus,
@@ -653,7 +652,8 @@ this.VueNextSelect = (function (vue) {
 
         dataAttrs,
         inputName,
-        innerPlaceholder,
+        customOption,
+        innerPlaceholder
       }
     },
     components: {

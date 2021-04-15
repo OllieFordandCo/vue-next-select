@@ -454,7 +454,6 @@ export default {
 
     return {
       isFocusing,
-      customOption,
       wrapper,
       input,
       focus,
@@ -478,7 +477,8 @@ export default {
 
       dataAttrs,
       inputName,
-      innerPlaceholder,
+      customOption,
+      innerPlaceholder
     }
   },
   components: {

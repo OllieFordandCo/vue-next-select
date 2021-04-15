@@ -628,7 +628,6 @@ var script$3 = {
 
     return {
       isFocusing,
-      customOption,
       wrapper,
       input,
       focus,
@@ -652,7 +651,8 @@ var script$3 = {
 
       dataAttrs,
       inputName,
-      innerPlaceholder,
+      customOption,
+      innerPlaceholder
     }
   },
   components: {

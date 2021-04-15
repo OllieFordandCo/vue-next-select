@@ -1,6 +1,6 @@
 {
   "name": "vue-next-select",
-  "version": "2.1.2",
+  "version": "0.1.5",
   "engines": {
     "node": ">=10"
   },
