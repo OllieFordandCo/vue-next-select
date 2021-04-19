@@ -530,7 +530,7 @@ this.VueNextSelect = (function (vue) {
           context.emit('update:modelValue', props.inputName, selectedValues);
         } else {
           if (selectedValues.length) context.emit('update:modelValue', props.inputName, selectedValues[0]);
-          else context.emit('update:modelValue', props.inputName, null);
+          else context.emit('update:modelValue', props.inputName, selectedValues);
         }
       };
       vue.watch(
